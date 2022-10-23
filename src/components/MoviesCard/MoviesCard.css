@@ -90,7 +90,7 @@
   }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 1140px) {
   .movies-card__image {
     max-width: 300px;
   }

@@ -12,7 +12,7 @@
   padding: 0;
   list-style: none;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   flex-wrap: wrap;
   gap: 58px 30px;
@@ -56,7 +56,7 @@
 @media screen and (max-width: 1220px) {
   .movies-card-list__list {
     row-gap: 45px;
-    justify-content: space-evenly;
+    justify-content: flex-start;
   }
 
   .movies-card-list__container_saved-movies {
@@ -64,9 +64,9 @@
   }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1019px) {
   .movies-card-list__list {
-    justify-content: space-between;
+    justify-content: space-evenly;
   }
 }
 
