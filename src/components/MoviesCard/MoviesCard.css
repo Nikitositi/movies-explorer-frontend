@@ -10,6 +10,7 @@
   display: block;
   max-width: 360px;
   width: 100%;
+  border-radius: 6px;
 }
 
 .movies-card__wrapper {

@@ -16,6 +16,7 @@ function Burger() {
   return (
     <>
       <button
+        type='button'
         className={`burger ${activeBurger ? 'burger_active' : ''}`}
         onClick={handleActiveBurger}>
         <span className='burger__line' />
@@ -27,7 +28,7 @@ function Burger() {
           className={`burger__menu ${
             activeBurger ? 'burger__menu_active' : ''
           }`}>
-          <div className='burger__menu__wrapper'>
+          <div className='burger__menu__wrapper' type='button'>
             <button className='burger_close' onClick={handleActiveBurger}>
               <span className='burger__line' />
               <span className='burger__line' />

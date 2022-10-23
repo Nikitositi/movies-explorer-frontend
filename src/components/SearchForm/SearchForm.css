@@ -25,13 +25,18 @@
   width: 100%;
   border: none;
   outline: none;
-  padding: 25px 0;
+  padding: 23px 0;
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
   line-height: 20px;
   color: #8b8b8b;
   background-color: #2f2f2f;
+}
+
+.search__input:focus {
+  border: 1px solid #3ddc84;
+  border-radius: 20px;
 }
 
 .search__icon {

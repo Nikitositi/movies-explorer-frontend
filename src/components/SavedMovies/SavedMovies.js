@@ -4,12 +4,12 @@ import './SavedMovies.css';
 
 function SavedMovies() {
   return (
-    <div className='saved-movies'>
+    <main className='saved-movies'>
       <div className='saved-movies__container'>
         <SearchForm />
         <MoviesCardList />
       </div>
-    </div>
+    </main>
   );
 }
 

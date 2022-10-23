@@ -5,13 +5,13 @@ import './Movies.css';
 
 function Movies() {
   return (
-    <div className='movies'>
+    <main className='movies'>
       <div className='movies__container'>
         <SearchForm />
         <MoviesCardList />
         {/* <Preloader /> */}
       </div>
-    </div>
+    </main>
   );
 }
 

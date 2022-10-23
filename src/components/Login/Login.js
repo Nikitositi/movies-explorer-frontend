@@ -5,7 +5,7 @@ import './Login.css';
 
 function Login() {
   return (
-    <section className='login'>
+    <main className='login'>
       <div className='login__container'>
         <Link to='/' className='login__link'>
           <img className='login__logo' src={logo} alt='Логотип сайта' />
@@ -18,7 +18,7 @@ function Login() {
           route='/signup'
         />
       </div>
-    </section>
+    </main>
   );
 }
 

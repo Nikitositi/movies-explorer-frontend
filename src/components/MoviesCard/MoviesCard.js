@@ -21,15 +21,22 @@ function MoviesCard(props) {
         <img className='movies-card__image' src={image} alt={title} />
         {pathname === '/saved-movies' ? (
           <button
+            type='button'
             className='movies-card__btn movies-card__btn_delete'
             onClick={handleDelete}
           />
         ) : isSaved ? (
-          <button className='movies-card__btn' onClick={handleClick}>
+          <button
+            type='button'
+            className='movies-card__btn'
+            onClick={handleClick}>
             Сохранить
           </button>
         ) : (
-          <button className='movies-card__btn movies-card__btn_success' />
+          <button
+            type='button'
+            className='movies-card__btn movies-card__btn_success'
+          />
         )}
       </div>
       <div className='movies-card__wrapper'>

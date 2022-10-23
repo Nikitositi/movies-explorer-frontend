@@ -8,7 +8,7 @@ function Register() {
   const name = useInput('', { isEmpty: true, minLength: 2 });
 
   return (
-    <section className='register'>
+    <main className='register'>
       <div className='register__container'>
         <Link to='/' className='register__link'>
           <img className='register__logo' src={logo} alt='Логотип сайта' />
@@ -43,7 +43,7 @@ function Register() {
           </label>
         </Form>
       </div>
-    </section>
+    </main>
   );
 }
 
