@@ -1,9 +1,12 @@
 import { Link } from 'react-router-dom';
 import logo from '../../images/logo.svg';
+import { useInput } from '../../utils/useInput';
 import Form from '../Form/Form';
 import './Register.css';
 
 function Register() {
+  const name = useInput('', { isEmpty: true, minLength: 2 });
+
   return (
     <section className='register'>
       <div className='register__container'>
@@ -20,13 +23,23 @@ function Register() {
             Имя
             <input
               className='form__input'
+              value={name.value}
+              onChange={(evt) => name.onChange(evt)}
+              onBlur={() => name.onBlur()}
               name='name'
               type='text'
               minLength={2}
               maxLength={30}
               required
             />
-            <span className='form__error'>Что-то пошло не так...</span>
+            {name.isDirty && name.isEmpty && (
+              <span className='form__error'>Поле не может быть пустым</span>
+            )}
+            {name.isDirty && name.minLengthError && (
+              <span className='form__error'>
+                Длина не может быть короче 2 символов
+              </span>
+            )}
           </label>
         </Form>
       </div>

@@ -40,3 +40,18 @@
 .nav-tab__link:hover {
   opacity: 0.3;
 }
+
+@media screen and (max-width: 600px) {
+  .nav-tab__list {
+    padding: 25px 0;
+  }
+
+  .nav-tab__link {
+    font-size: 11px;
+    line-height: 16px;
+  }
+
+  .nav-tab__list-item {
+    margin-right: 24px;
+  }
+}

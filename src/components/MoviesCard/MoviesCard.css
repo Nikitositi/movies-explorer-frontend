@@ -44,7 +44,6 @@
 
 .movies-card__btn {
   opacity: 0;
-  z-index: 100;
   border: none;
   outline: none;
   background-color: #313131;
@@ -77,4 +76,22 @@
 
 .movies-card__img-wrapper:hover .movies-card__btn {
   opacity: 1;
+}
+
+@media screen and (max-width: 1350px) {
+  .movies-card__image {
+    max-width: 339px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .movies-card__wrapper {
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .movies-card__image {
+    max-width: 300px;
+  }
 }

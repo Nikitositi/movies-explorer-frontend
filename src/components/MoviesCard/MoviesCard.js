@@ -1,9 +1,11 @@
+import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import './MoviesCard.css';
 
 function MoviesCard(props) {
   const { image, title, duration, isSaved } = props;
   const { pathname } = useLocation();
+  useEffect;
 
   return (
     <li className='movies-card'>

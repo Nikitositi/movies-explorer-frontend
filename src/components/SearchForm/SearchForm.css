@@ -6,6 +6,7 @@
   max-width: 1140px;
   margin: 0 auto 10px;
   padding: 70px 0;
+  padding-bottom: 69px;
   box-sizing: border-box;
   border-bottom: 1px solid #424242;
 }
@@ -38,14 +39,15 @@
   margin-right: 10px;
 }
 
-.search__left-side {
+.search__right-side {
   display: flex;
   gap: 39px;
   margin-right: 30px;
 }
 
 .search__btn-container {
-  width: 80px;
+  min-width: 80px;
+  margin-right: 39px;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -69,7 +71,7 @@
   box-sizing: border-box;
   background-color: #4285f4;
   border-radius: 48px;
-  padding: 8px 10px;
+  padding: 8px 10.35px;
   font-style: normal;
   font-weight: 500;
   font-size: 11px;
@@ -82,4 +84,36 @@
 
 .search__btn:hover {
   opacity: 0.7;
+}
+
+@media screen and (max-width: 600px) {
+  .search__container {
+    padding-bottom: 44px;
+  }
+
+  .search__form {
+    margin-bottom: 45px;
+  }
+
+  .search__btn-container {
+    margin-right: 19px;
+  }
+
+  .search__btn-container::after {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .search__icon {
+    display: none;
+  }
+
+  .search__input {
+    padding-left: 19px;
+    border-top-left-radius: 9px;
+    border-bottom-left-radius: 9px;
+    font-size: 14px;
+    line-height: 20px;
+  }
 }

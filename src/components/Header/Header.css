@@ -87,3 +87,28 @@
   color: #3ddc84;
   background-color: rgba(49, 49, 49, 0.5);
 }
+
+@media screen and (max-width: 1220px) {
+  .header__container {
+    padding: 0 30px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header__link-account {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .header__link {
+    font-size: 10px;
+    line-height: 16px;
+  }
+
+  .header__btn {
+    font-size: 10px;
+    line-height: 16px;
+    padding: 5px 12px;
+  }
+}

@@ -8,3 +8,15 @@
   padding: 0 70px;
   box-sizing: border-box;
 }
+
+@media screen and (max-width: 1220px) {
+  .movies__container {
+    padding: 0 30px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .movies__container {
+    padding: 0 10px;
+  }
+}

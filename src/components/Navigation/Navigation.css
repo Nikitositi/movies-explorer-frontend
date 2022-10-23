@@ -24,3 +24,9 @@
 .navigation__link:hover {
   color: #3ddc84;
 }
+
+@media screen and (max-width: 768px) {
+  .navigation {
+    display: none;
+  }
+}

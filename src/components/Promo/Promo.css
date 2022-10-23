@@ -19,3 +19,27 @@
   text-align: center;
   letter-spacing: -0.04em;
 }
+
+@media screen and (max-width: 800px) {
+  .promo {
+    min-height: 784px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .promo__title {
+    font-size: 40px;
+    line-height: 1.26;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .promo {
+    min-height: 570px;
+  }
+
+  .promo__title {
+    font-size: 31px;
+    line-height: 39px;
+  }
+}

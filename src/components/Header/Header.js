@@ -2,6 +2,7 @@ import Navigation from '../Navigation/Navigation';
 import logo from '../../images/logo.svg';
 import './Header.css';
 import { Link, useLocation } from 'react-router-dom';
+import Burger from '../Burger/Burger';
 
 function Header(props) {
   const { bgColor } = props;
@@ -29,9 +30,12 @@ function Header(props) {
               </Link>
             </>
           ) : (
-            <Link to='/profile' className='header__link-account'>
-              Аккаунт
-            </Link>
+            <>
+              <Link to='/profile' className='header__link-account'>
+                Аккаунт
+              </Link>
+              <Burger />
+            </>
           )}
         </div>
       </div>
