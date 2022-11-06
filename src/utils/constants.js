@@ -1,46 +1,11 @@
-import movieCard from '../images/movieCard.jpg';
+export const MAIN_API = 'https://api.movies-nikitositi.nomoredomains.icu';
 
-const movies = [
-  {
-    url: movieCard,
-    title: '33 слова о дизайне',
-    duration: '1ч 17м',
-  },
-  {
-    url: movieCard,
-    title: 'Киноальманах «100 лет дизайна',
-    duration: '1ч 17м',
-  },
-  {
-    url: movieCard,
-    title: 'В погоне за Бенкси',
-    duration: '1ч 17м',
-  },
-  {
-    url: movieCard,
-    title: 'Баския: Взрыв реальности',
-    duration: '1ч 17м',
-  },
-  {
-    url: movieCard,
-    title: 'Бег это свобода',
-    duration: '1ч 17м',
-  },
-  {
-    url: movieCard,
-    title: 'Книготорговцы',
-    duration: '1ч 17м',
-  },
-  {
-    url: movieCard,
-    title: 'Когда я думаю о Германии ночью',
-    duration: '1ч 17м',
-  },
-  {
-    url: movieCard,
-    title: 'Gimme Danger: История Игги и The Stooges',
-    duration: '1ч 17м',
-  },
-];
+export const MOVIES_URL = 'https://api.nomoreparties.co';
 
-export default movies;
+export const MOVIES_API = `${MOVIES_URL}/beatfilm-movies`;
+
+export const SHORT_MOVIE_DURATION = 40;
+
+export const MOBILE_WIDTH = 320;
+export const TABLET_WIDTH = 768;
+export const DESKTOP_WIDTH = 1280;

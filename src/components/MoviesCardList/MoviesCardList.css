@@ -1,4 +1,5 @@
 .movies-card-list__container {
+  margin: 0 auto;
   padding-bottom: 80px;
   padding-top: 70px;
 }

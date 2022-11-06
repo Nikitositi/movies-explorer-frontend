@@ -1,5 +1,6 @@
 .movies {
   background-color: #202020;
+  min-height: calc(100vh - 172px);
 }
 
 .movies__container {

@@ -15,10 +15,10 @@ function Header(props) {
           <Link to='/' className='header__logo'>
             <img src={logo} alt='Логотип сайта' />
           </Link>
-          {pathname === '/' ? '' : <Navigation></Navigation>}
+          {pathname === '/' && !props.loggedIn ? '' : <Navigation></Navigation>}
         </div>
         <div className='header__nav'>
-          {pathname === '/' ? (
+          {pathname === '/' && !props.loggedIn ? (
             <>
               <Link
                 to={`${pathname === '/' ? '/signup' : '/profile'}`}

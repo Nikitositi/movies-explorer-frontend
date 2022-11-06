@@ -8,8 +8,18 @@ function Form(props) {
   const { buttonText, linkText, text, route } = props;
   const { pathname } = useLocation();
 
+  function handleSubmit(evt) {
+    evt.preventDefault();
+
+    if (pathname === '/signin') {
+      props.onLogin(email.value, password.value);
+    } else {
+      props.onRegister(props.name.value, email.value, password.value);
+    }
+  }
+
   return (
-    <form className='form'>
+    <form className='form' onSubmit={handleSubmit}>
       {props.children}
       <label className='form__label' htmlFor='email'>
         E-mail
@@ -50,6 +60,7 @@ function Form(props) {
         )}
       </label>
       <div className='form__wrapper'>
+        {/* <span className='form__submit-error'>{props.message}</span> */}
         <button
           disabled={!email.inputValid || !password.inputValid}
           className={`form__btn ${

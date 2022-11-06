@@ -32,12 +32,12 @@ export const useValidation = (value, validations) => {
   }, [value]);
 
   useEffect(() => {
-    if (isEmpty || minLengthError) {
+    if (isEmpty || minLengthError || isEmailError) {
       setInputValid(false);
     } else {
       setInputValid(true);
     }
-  }, [isEmpty, minLengthError]);
+  }, [isEmpty, minLengthError, isEmailError]);
 
   return { isEmpty, minLengthError, isEmailError, inputValid };
 };
