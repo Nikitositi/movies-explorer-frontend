@@ -61,7 +61,24 @@ function App() {
           setLoggedIn(true);
           history.push(location.pathname);
         })
-        .catch((err) => console.log(err));
+        .catch((err) => {
+          if (err.status === 409) {
+            setPopupMessage('Пользователь с таким email уже зарегистрирован');
+            setIsPopupOpen(true);
+          }
+        });
+    } else {
+      api.logout().then(() => {
+        localStorage.clear();
+        setAllMovies([]);
+        setMovies([]);
+        setSavedMovies([]);
+        setCurrentUser({});
+        setSearchKeyword('');
+        setFilteredMovies([]);
+        setLoggedIn(false);
+        history.push('/');
+      });
     }
   }, []);
 
@@ -78,13 +95,15 @@ function App() {
         })
         .catch((err) => console.log(err));
 
-      moviesApi
-        .getMovies()
-        .then((data) => {
-          setAllMovies(data);
-          localStorage.setItem('loadedMovies', JSON.stringify(data));
-        })
-        .catch((err) => console.log(err));
+      if (!localStorage.getItem('loadedMovies')) {
+        moviesApi
+          .getMovies()
+          .then((data) => {
+            setAllMovies(data);
+            localStorage.setItem('loadedMovies', JSON.stringify(data));
+          })
+          .catch((err) => console.log(err));
+      }
 
       if (filteredMovies.length) {
         setMovies(filteredMovies);
@@ -150,22 +169,28 @@ function App() {
   // Функция выхода из аккаунта
   function handleLogout() {
     setPopupMessage('До скорых встреч');
-    setIsPopupOpen(true);
-    setTimeout(closePopup, 2000);
-    localStorage.removeItem('token');
-    localStorage.removeItem('loadedMovies');
-    localStorage.removeItem('savedMovies');
-    localStorage.removeItem('checkBox');
-    localStorage.removeItem('searchKeyword');
-    localStorage.removeItem('filteredMovies');
-    setAllMovies([]);
-    setMovies([]);
-    setSavedMovies([]);
-    setCurrentUser({});
-    setSearchKeyword('');
-    setFilteredMovies([]);
-    setLoggedIn(false);
-    history.push('/');
+    api
+      .logout()
+      .then(() => {
+        setIsPopupOpen(true);
+        setTimeout(closePopup, 2000);
+        localStorage.clear();
+        setAllMovies([]);
+        setMovies([]);
+        setSavedMovies([]);
+        setCurrentUser({});
+        setSearchKeyword('');
+        setFilteredMovies([]);
+        setLoggedIn(false);
+        history.push('/');
+      })
+      .catch(() => {
+        setPopupMessage('Произошла ошибка, попробуйте eщё раз');
+        setIsPopupOpen(true);
+      })
+      .finally(() => {
+        setTimeout(closePopup, 2000);
+      });
   }
 
   // Функция редактирования профиля

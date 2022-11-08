@@ -49,6 +49,7 @@ function Movies(props) {
               onDelete={props.onDelete}
               savedMovies={props.savedMovies}
               checkBox={checkBoxClick}
+              isLoading={props.isLoading}
             />
           )}
         </div>

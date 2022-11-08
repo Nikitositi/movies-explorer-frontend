@@ -18,7 +18,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "scp -r ./build/* nikitositi@178.154.220.214:/home/nikitositi/movies-explorer-frontend"
   },
   "browserslist": {
     "production": [

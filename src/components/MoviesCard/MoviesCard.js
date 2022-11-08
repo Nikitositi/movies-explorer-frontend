@@ -7,7 +7,7 @@ function MoviesCard(props) {
 
   const isSaved = props.savedMovies.some((m) => m.movieId === props.movie.id);
 
-  function handleSaveClick() {
+  function handleClick() {
     if (isSaved) {
       props.onDelete(
         props.savedMovies.filter((m) => m.movieId === props.movie.id)[0]
@@ -55,10 +55,9 @@ function MoviesCard(props) {
           <button
             type='button'
             className={`movies-card__btn ${
-              isSaved && 'movies-card__btn_success'
+              isSaved ? 'movies-card__btn_success' : ''
             }`}
-            onClick={handleSaveClick}
-            disabled={isSaved}>
+            onClick={handleClick}>
             {!isSaved && 'Сохранить'}
           </button>
         )}

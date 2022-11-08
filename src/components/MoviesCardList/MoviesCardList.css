@@ -54,6 +54,23 @@
   opacity: 0.7;
 }
 
+.movies-card-list__btn_display-none {
+  display: none;
+}
+
+.movies-card-list__btn_disabled {
+  background-color: transparent;
+  border-radius: 5px;
+  border: 1px solid #424242;
+  color: #424242;
+}
+
+.movies-card-list__text {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
 @media screen and (max-width: 1220px) {
   .movies-card-list__list {
     row-gap: 45px;

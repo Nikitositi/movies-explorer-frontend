@@ -31,6 +31,14 @@ class MainApi {
     }).then(this._checkResponse);
   }
 
+  logout() {
+    return fetch(`${this._url}/signout`, {
+      method: 'POST',
+      headers: this._headers,
+      credentials: 'include',
+    }).then(this._checkResponseStatus);
+  }
+
   checkToken(token) {
     return fetch(`${this._url}/users/me`, {
       method: 'GET',

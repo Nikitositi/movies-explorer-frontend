@@ -72,33 +72,65 @@ function MoviesCardList(props) {
         {props.isLoading && <Preloader />}
         {props.notFoundMovies && <span>Ничего не найдено</span>}
 
-        <ul id='movies-card-list' className='movies-card-list__list'>
-          {moviesToShow.map((movie) => {
-            return (
-              <MoviesCard
-                movie={movie}
-                onSave={props.onSave}
-                onDelete={props.onDelete}
-                savedMovies={props.savedMovies}
-                key={movie._id || movie.id}
-              />
-            );
-          })}
-        </ul>
-        <div
-          className={
-            props.saved
-              ? 'movies-card-list__btn-container movies-card-list__btn-container_hide'
-              : `movies-card-list__btn-container ${
-                  props.movies.length === moviesToShow.length
-                    ? 'movies-card-list__btn-container_hide'
-                    : ''
-                }`
-          }>
-          <button className='movies-card-list__btn' onClick={renderMovies}>
-            Ещё
-          </button>
-        </div>
+        {props.movies.length ? (
+          <>
+            <ul id='movies-card-list' className='movies-card-list__list'>
+              {moviesToShow.map((movie) => {
+                return (
+                  <MoviesCard
+                    movie={movie}
+                    onSave={props.onSave}
+                    onDelete={props.onDelete}
+                    savedMovies={props.savedMovies}
+                    key={movie._id || movie.id}
+                  />
+                );
+              })}
+            </ul>
+            <div
+              className={
+                props.saved
+                  ? 'movies-card-list__btn-container movies-card-list__btn-container_hide'
+                  : `movies-card-list__btn-container ${
+                      props.movies.length === moviesToShow.length
+                        ? 'movies-card-list__btn-container_hide'
+                        : ''
+                    }`
+              }>
+              {location.pathname === '/movies' && (
+                <button
+                  className={`movies-card-list__btn ${
+                    currentCards > props.movies.length &&
+                    'movies-card-list__btn_disabled'
+                  } ${
+                    currentCards === props.movies.length &&
+                    'movies-card-list__btn_display-none'
+                  }`}
+                  onClick={renderMovies}>
+                  Ещё
+                </button>
+              )}
+              {location.pathname === '/saved-movies' && (
+                <button
+                  className='movies-card-list__btn_display-none'
+                  onClick={renderMovies}>
+                  Ещё
+                </button>
+              )}
+            </div>
+          </>
+        ) : (
+          <>
+            {location.pathname === '/saved-movies' && (
+              <p className='movies-card-list__text'>
+                Добавляйте сюда понравившиеся фильмы
+              </p>
+            )}
+            {location.pathname === '/movies' && (
+              <p className='movies-card-list__text'>Начните искать фильмы</p>
+            )}
+          </>
+        )}
       </div>
     </section>
   );
